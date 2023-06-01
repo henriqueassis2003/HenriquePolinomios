@@ -27,10 +27,10 @@ class polinomioHenrique:
 
     @staticmethod
     def evaluate(polynom, x):
-        somatorio = 0
-        for j in polynom:
-            somatorio += polynom[j] * (x ** j)
-        return somatorio
+        sum_of_x = 0
+        for degree in polynom:
+            sum_of_x += polynom[degree] * (x ** degree)
+        return sum_of_x
 
     def newtonRaphson(self, min_interval, max_interval):
         if abs(max_interval - min_interval) < 2:
