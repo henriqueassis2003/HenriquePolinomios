@@ -1,13 +1,6 @@
 class polinomioHenrique:
-    def __init__(self, polinomial_list):
-        self.polinomial_dict = {}
-        for i in polinomial_list:
-            inverse_list = (i[1], i[0])
-            if inverse_list[1] in self.polinomial_dict:
-                self.polinomial_dict[inverse_list[0]] += inverse_list[1]
-            else:
-                self.polinomial_dict[inverse_list[0]] = inverse_list[1]
-        print(self.polinomial_dict)
+    def __init__(self, polinomial_dict):
+        self.polinomial_dict = polinomial_dict
 
     def sumModules(self, modules_list):
         for j in modules_list:
