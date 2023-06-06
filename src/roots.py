@@ -36,3 +36,17 @@ def ext_sucessive_appx(polinomial_dict, min_interval, max_interval):
                     return  (min_interval + max_interval) / 2
             return (min_interval + max_interval) / 2
 
+    def newtonRaphson(polinomial_dict, min_interval, max_interval):
+        if abs(max_interval - min_interval) < 2:
+            xn = (max_interval + min_interval) / 2
+            for i in range(1, 20):
+                xn -= (evaluate(polinomial_dict, xn)) / (evaluate(symDerivate(), xn))
+            return xn
+        else:
+            for j in range(abs(int(max_interval - min_interval)) // 2 + 1):
+                xn = min_interval + j * (abs(max_interval - min_interval) // 2 + 1)
+                for i in range(1, 100):
+                    xn -= (evaluate(polinomial_dict, xn)) / (evaluate(symDerivate(), xn))
+                if evaluate(polinomial_dict, xn) < 1e-5:
+                    return xn
+        return False
