@@ -157,3 +157,15 @@ if ```False``` will return a class-polynom
 example:
 
 $$\int 5x^4+8x^2+15x+14 dx$$
+
+using 
+
+```
+poly_example2=poly_example.sym_Integral()
+print(poly_example2.to_dict())
+```
+
+<h3>Getting symbolic derivative</h3>
+
+to get the simbolic derivative
+
