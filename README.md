@@ -242,4 +242,4 @@ Is an optional parameter, and default value is 100 iterations
 
 example
 
-$$$$
+$$x^-x^3+x+7=0;x_0=1$$
