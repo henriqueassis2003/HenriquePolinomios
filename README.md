@@ -44,7 +44,9 @@ deffine a variable and call the polynom class with a function like syntax,
 can be done with:
 
 ```
-
+poly.polynomHenrique(dictionary)
 ```
+
+when ```dictionary``` is a dictionary that represent the polynom. The 
 
 
