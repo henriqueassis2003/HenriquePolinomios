@@ -47,6 +47,9 @@ can be done with:
 poly.polynomHenrique(dictionary)
 ```
 
-when ```dictionary``` is a dictionary that represent the polynom. The 
+when ```dictionary``` is a dictionary that represent the polynom. 
+The key represent the degree and the value represent the multiplier for each key/degree
+
+example, $$3x^7+11x^2+20x+2$$
 
 
