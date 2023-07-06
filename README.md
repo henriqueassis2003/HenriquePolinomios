@@ -242,4 +242,23 @@ Is an optional parameter, and default value is 100 iterations
 
 example
 
-$$x^-x^3+x+7=0;x_0=1$$
+$$x^5-x^3+x+7=0;x_0=-1$$
+
+
+cn be done with
+
+```
+poly_example=poly.polynomHenrique({5:1,3:1,1:1,0:7})
+print(poly_example.newton_Raphson(-1))
+```
+and return 
+
+```
+-1.289546366784894
+```
+
+:warning:  **if derivative of polynom at the poin is zero, the method will fail, with an exception** 
+
+
+:warning:  **if the number of iteraction/cycle is low this meth return a wrong root value** make sure that cycle number is sufficient 
+
