@@ -99,10 +99,17 @@ print(poly_example.to_dict())
 the output will be:
 
 ```
-print(poly_example.to_dict())
+{2: 11, 1: 20, 0: 2}
 ```
 
  :warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
 
 
+<h3>sum the parts for the polynom</h3>
 
+to sum a new part
+the command is:
+
+```
+variable.sum_polynom(dictionary)
+```
