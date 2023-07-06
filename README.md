@@ -57,3 +57,22 @@ can be represented in
 ```
 poly_example=poly.polynomHenrique({7:3,2:11,1:20,0:2})
 ```
+
+<h3>returning for dictionary </h3>
+
+for return thepolynom-class to dictionary, the command is
+
+```
+variable.to_dict()
+```
+
+example:
+```
+print(poly_example.to_dict())
+```
+the output like this:
+
+
+```
+{7: 3, 2: 11, 1: 20, 0: 2}
+```
