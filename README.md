@@ -21,7 +21,7 @@ to execute the library is needed:
 
   can be done in python terminal with:
 
-```
+```console
 pip install matplotlib
 ```
 
@@ -34,7 +34,7 @@ after install the polynom library
 the next step is import the polynom library, can be done by several ways
 one way is:
 
-```
+```python
 import poly
 ```
 
@@ -54,7 +54,7 @@ example, $$3x^7+11x^2+20x+2$$
 
 can be represented in
 
-```
+```python
 poly_example=poly.polynomHenrique({7:3,2:11,1:20,0:2})
 ```
 
@@ -67,7 +67,7 @@ variable.to_dict()
 ```
 
 example:
-```
+```python
 print(poly_example.to_dict())
 ```
 the output like this:
