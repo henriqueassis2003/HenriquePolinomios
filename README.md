@@ -169,3 +169,18 @@ print(poly_example2.to_dict())
 
 to get the simbolic derivative
 
+can be used creating a new variable like that
+
+```
+variable2=variable.sym_Derivative(inplace)
+```
+
+or 
+
+```
+variable.sym_Derivative(True)
+```
+
+```inplace``` is a optional parameter, (```False``` by default)
+if ```True``` will modify directly the primitive polynom(overwrite)
+if ```False``` will return a class-polynom 
