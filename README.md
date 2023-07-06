@@ -150,6 +150,10 @@ or
 variable.sym_Integral(True)
 ```
 
-```inplace``` is a optional parameter, (````False``` by default)
+```inplace``` is a optional parameter, (```False``` by default)
 if ```True``` will modify directly the primitive polynom(overwrite)
 if ```False``` will return a class-polynom 
+
+example:
+
+$$\int 5x^4+8x^2+15x+14 dx$$
