@@ -184,3 +184,43 @@ variable.sym_Derivative(True)
 ```inplace``` is a optional parameter, (```False``` by default)
 if ```True``` will modify directly the primitive polynom(overwrite)
 if ```False``` will return a class-polynom 
+
+example
+
+$$\frac{d}{dx}(x^5+\frac{5x^3}{3}+\frac{15x^2}{2}+14x)$$
+
+
+can be done with:
+```
+poly_example3=poly_example2.sym_Derivative()
+print(poly_example3.to_dict())
+```
+
+the output is like that:
+```
+{2: 8.0, 1: 15.0, 0: 14.0, 4: 5.0}
+```
+
+<h3>Evaluate a function </h3>
+
+to evaluate the function at point, is used 
+
+```
+variable.evaluate(x)
+```
+
+where
+
+```x``` is the point of horizontal axys
+
+Example:
+
+```
+print(poly_example.evaluate(2))
+```
+
+and this return
+
+```
+156
+```
