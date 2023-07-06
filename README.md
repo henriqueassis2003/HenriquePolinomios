@@ -52,4 +52,8 @@ The key represent the degree and the value represent the multiplier for each key
 
 example, $$3x^7+11x^2+20x+2$$
 
+can be represented in
 
+```
+poly_example=poly.polynomHenrique({7:3,2:11,1:20,0:2})
+```
