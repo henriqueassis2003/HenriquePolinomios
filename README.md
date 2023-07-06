@@ -25,3 +25,5 @@ to execute the library is needed:
 pip install matplotlib
 ```
 
+<h1> Syntax and user command</h1>
+
