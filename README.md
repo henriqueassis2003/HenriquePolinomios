@@ -305,3 +305,29 @@ aznd will  return
 
 :warning:  **the method may fail, if exist two roots or more, in interval**
 
+<h3>graphics starting</h3>
+
+to start the graphic the comand is 
+
+```
+variable.start_plot(xmin,xmax,step)
+```
+where
+```xmin``` is minimum value in graphical analisys.
+an optional parameter the default value is -10
+
+```xmax``` is maximum value in graphical analisys.
+an optional parameter the default value is +10
+
+```step``` is ´the step between analisys value in  axys
+an optional parameter the default value is 0.001(1e-3)
+
+example
+
+```
+poly_example.start_plot(-5,5,1e-5)
+```
+
+:warning:  **after be setted up, this values of minimum, maximum, step can´t be editted** is needed to create a new variable and new graphical
+
+<h3>adding new graphics</h3>
