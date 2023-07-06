@@ -27,3 +27,24 @@ pip install matplotlib
 
 <h1> Syntax and user command</h1>
 
+<h3>Importing polynom library</h3>
+
+after install the polynom library
+
+the next step is import the polynom library, can be done by several ways
+one way is:
+
+```
+import poly
+```
+
+
+to start thuse of the library the step is, 
+deffine a variable and call the polynom class with a function like syntax,
+can be done with:
+
+```
+
+```
+
+
