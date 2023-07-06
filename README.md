@@ -136,5 +136,20 @@ the output must be:
 
 :warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
 
-<h3>Getting integral</h3>
+<h3>Getting symbolic integral</h3>
 
+to get the new integral can be used creating a new variable like that
+
+```
+variable2=variable.sym_Integral(inplace)
+```
+
+or 
+
+```
+variable.sym_Integral(True)
+```
+
+```inplace``` is a optional parameter, (````False``` by default)
+if ```True``` will modify directly the primitive polynom(overwrite)
+if ```False``` will return a class-polynom 
