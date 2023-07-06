@@ -76,3 +76,23 @@ the output like this:
 ```
 {7: 3, 2: 11, 1: 20, 0: 2}
 ```
+
+<h3>Erasing parts of the polynom</h3>
+to erase a part of the polynom, the command is:
+
+```
+variable.erase_degree(degree)
+```
+
+when ````degree```  is the degree/key that will be deleted
+
+example, in
+$$3x^7+11x^2+20x+2$$
+will be deleted the
+$$3x^7$$
+using the 
+```
+
+
+```
+
