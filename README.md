@@ -102,4 +102,7 @@ the output will be:
 print(poly_example.to_dict())
 ```
 
-> :warning:  This command will modify directly the polynom, be careful
+ :warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
+
+
+
