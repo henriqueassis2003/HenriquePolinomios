@@ -84,7 +84,7 @@ to erase a part of the polynom, the command is:
 variable.erase_degree(degree)
 ```
 
-when ````degree```  is the degree/key that will be deleted
+when ```degree```  is the degree/key that will be deleted
 
 example, in
 $$3x^7+11x^2+20x+2$$
@@ -92,7 +92,14 @@ will be deleted the
 $$3x^7$$
 using the 
 ```
-
-
+poly_example.erase_degree(7)
+print(poly_example.to_dict())
 ```
 
+the output will be:
+
+```
+print(poly_example.to_dict())
+```
+
+> :warning:  This command will modify directly the polynom, be careful
