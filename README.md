@@ -297,4 +297,11 @@ poly_example.successive_Approximation(-2,-1,10**-5)
 
 aznd will  return
 
-``````www
+```
+-1.289546012878418
+```
+
+:warning:  **the root finding wil, fail, if the root is out of interval, or dont exist**
+
+:warning:  **the method may fail, if exist two roots or more, in interval**
+
