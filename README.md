@@ -224,3 +224,22 @@ and this return
 ```
 156
 ```
+
+<h3>root  finding I</h3>
+
+the frst method of root finding is newton-Raphson method
+
+the command is
+
+```
+variable.newton_Raphson(root,cycles)
+```
+
+```root``` is a initial guess value for root of the polynom
+
+```cycles```  is the number of iterations of newton method
+Is an optional parameter, and default value is 100 iterations
+
+example
+
+$$$$
