@@ -91,7 +91,7 @@ $$3x^7+11x^2+20x+2$$
 will be deleted the
 $$3x^7$$
 using the 
-```
+```python
 poly_example.erase_degree(7)
 print(poly_example.to_dict())
 ```
@@ -113,3 +113,25 @@ the command is:
 ```
 variable.sum_polynom(dictionary)
 ```
+
+example:
+
+add 
+$$-3x^2+15+5x^4$$
+in the 
+$$11x^2+20x+2$$
+
+using the command
+
+```
+poly_example.sum_polynom({2:-3,1:-5,0:12,4:5})
+print(poly_example.to_dict())
+```
+
+the output must be:
+
+```
+{2: 8, 1: 15, 0: 14, 4: 5}
+```
+
+:warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
