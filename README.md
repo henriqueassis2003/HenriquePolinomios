@@ -257,8 +257,44 @@ and return
 -1.289546366784894
 ```
 
+
+
 :warning:  **if derivative of polynom at the poin is zero, the method will fail, with an exception** 
 
 
 :warning:  **if the number of iteraction/cycle is low this meth return a wrong root value** make sure that cycle number is sufficient 
 
+<h3>root  finding II</h3>
+
+the second method is sucessive approximation(bisection)
+breaking the interval in two part in each iteraction
+
+the command is 
+
+```
+variable.successive_Approximation( min_interval, max_interval,tolerance)
+```
+
+when
+
+```min_interval``` is the lower value in analisys
+
+```max_interval``` is the maximum value in analisys
+
+```tolerance``` the errorof the root(deffine thestop point of the method)
+an optional parameter, and default value is 0.001(1e-3)
+
+
+example
+
+$$x^5-x^3+x+7=0;-2\leq  x\leq -1; \epsilon =10^{-5}$$
+
+can be done with
+
+```
+poly_example.successive_Approximation(-2,-1,10**-5)
+```
+
+aznd will  return
+
+``````www
