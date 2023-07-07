@@ -5,8 +5,10 @@ def ext_evaluate(polynomial, x):
     return sum_of_x
 
 def ext_symDerivate(polynomial_dict):
-    return {(i - 1): (polynomial_dict[i] * i) for i in polynomial_dict}
-
+    derivate_dict_out ={(i - 1): (polynomial_dict[i] * i) for i in polynomial_dict}
+    if -1 in derivate_dict_out:
+        del derivate_dict_out[-1]
+    return derivate_dict_out
 def ext_successiveAppx(self, min_interval, max_interval,tolerance=1e-12) :
         itter=0
         while abs(ext_evaluate(self.polynomial_dict, (min_interval + max_interval) / 2)) >= tolerance:
