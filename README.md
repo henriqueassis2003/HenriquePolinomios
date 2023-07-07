@@ -407,7 +407,7 @@ variable.execute_plot(legends,title)
 ```
 
 ```legends``` Is an optional parameter, set to ```False``` by default.
-If set to ````True``` it will display the legends/subtitle on the screen.
+If set to ```True``` it will display the legends/subtitle on the screen.
 
 ```title```   Is an optional parameter, set to "poly-Henrique" by default.
 This parameter represents the name or title that appears at the top of the graphic.
