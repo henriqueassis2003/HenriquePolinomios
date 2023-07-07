@@ -418,4 +418,5 @@ poly_example.execute_plot(True,"Example-graphic")
 
 And finally, the plot will be returned and shown on the screen.
 
-![Captura de Tela (48)](https://github.com/henriqueassis2003/HenriquePolinomios/assets/128740531/4220c763-9216-4fe2-8977-6b72d363b313)
+![Captura de Tela (48)](https://github.com/henriqueassis2003/HenriquePolinomios/assets/128740531/4b1e77cb-04cd-49bc-96ad-ddb0be3bf5ac)
+
