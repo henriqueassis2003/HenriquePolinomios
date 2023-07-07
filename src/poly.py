@@ -1,74 +1,60 @@
-class polinomioHenrique:
-    def __init__(self, polinomial_dict):
-        self.polinomial_dict = polinomial_dict
+import roots
+import graphics as gfx
+class polynomHenrique:
+    def __init__(self, polynomial_dict):
+        self.polynomial_dict = polynomial_dict
 
-    def sumModules(self, modules_list):
-        for j in modules_list:
-            inverse_list = (j[1], j[0])
-            if inverse_list[1] in self.polinomial_dict:
-                self.polinomial_dict[inverse_list[0]] += inverse_list[1]
+    def sum_polynom(self, modules_dict):
+        for j in modules_dict:
+            if j in self.polynomial_dict:
+                self.polynomial_dict[j] += modules_dict[j]
             else:
-                self.polinomial_dict[inverse_list[0]] = inverse_list[1]
+                self.polynomial_dict[j] = modules_dict[j]
 
-    def symIntegral(self):
-        integral_dict_out = {(i + 1) : (self.polinomial_dict[i] / (i + 1)) for i in self.polinomial_dict}
-        return integral_dict_out
+    def erase_degree(self,degree):
+        del self.polynomial_dict[degree]
 
-    def symDerivate(self):
-        derivate_dict_out = {(i - 1) : (self.polinomial_dict[i] * i) for i in self.polinomial_dict}
-        return derivate_dict_out
+    def sym_Integral(self,inplace=False):
+        integral_dict_out = {(i + 1) : (self.polynomial_dict[i] / (i + 1)) for i in self.polynomial_dict}
+        if inplace:
+            self.polynomial_dict= integral_dict_out
+        else:
+            return polynomHenrique(integral_dict_out)
 
-    @staticmethod
-    def evaluate(polynom, x):
+    def sym_Derivative(self,inplace=False):
+        derivate_dict_out = {(i - 1) : (self.polynomial_dict[i] * i) for i in self.polynomial_dict}
+        if inplace:
+            self.polynomial_dict= derivate_dict_out
+        else:
+            return polynomHenrique(derivate_dict_out)
+
+    def evaluate(self, x):
         sum_of_x = 0
-        for degree in polynom:
-            sum_of_x += polynom[degree] * (x ** degree)
+        for degree in self.polynomial_dict:
+            sum_of_x += self.polynomial_dict[degree] * (x ** degree)
         return sum_of_x
 
-    def newtonRaphson(self, min_interval, max_interval):
-        if abs(max_interval - min_interval) < 2:
-            xn = (max_interval + min_interval) / 2
-            for i in range(1, 20):
-                xn -= (self.evaluate(self.polinomial_dict, xn)) / (self.evaluate(self.symDerivate(), xn))
-            return xn
-        else:
-            for j in range(abs(int(max_interval - min_interval)) // 2 + 1):
-                xn = min_interval + j * (abs(max_interval - min_interval) // 2 + 1)
-                for i in range(1, 100):
-                    xn -= (self.evaluate(self.polinomial_dict, xn)) / (self.evaluate(self.symDerivate(), xn))
-                if self.evaluate(self.polinomial_dict, xn) < 1e-5:
-                    return xn
-        return False
+    def newton_Raphson(self, root,cycles=100):
+        return roots.ext_newtonRaphson(self.polynomial_dict, root, cycles)
 
-    def sucessiveAproximation(self, min_interval, max_interval):
-        if self.evaluate(self.polinomial_dict, min_interval) <= self.evaluate(self.polinomial_dict, max_interval):
-            if self.evaluate(self.polinomial_dict, min_interval) == 0:
-                return min_interval
-            diference = 1
-            while diference >= 1e-15:
-                if self.evaluate(self.polinomial_dict, (min_interval+max_interval)/2) > 0:
-                    max_interval=(min_interval+max_interval)/2
-                if self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2) < 0:
-                    min_interval = (min_interval + max_interval) / 2
-                diference = abs(self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2))
-                if self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2) == 0:
-                    return  (min_interval + max_interval) / 2
-            return  (min_interval + max_interval) / 2
-        if self.evaluate(self.polinomial_dict, min_interval) > self.evaluate(self.polinomial_dict, max_interval):
-            if self.evaluate(self.polinomial_dict, max_interval) == 0:
-                return min_interval
+    def successive_Approximation(self, min_interval, max_interval,tolerance=1e-3):
+        return roots.ext_successiveAppx(self, min_interval, max_interval, tolerance)
 
-            diference = 1
-            while diference >= 1e-15:
-                print("caiu no loop")
-                if self.evaluate(self.polinomial_dict, (min_interval+max_interval)/2) > 0:
-                    min_interval=(min_interval+max_interval)/2
-                if self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2) < 0:
-                    max_interval = (min_interval + max_interval) / 2
-                diference=abs(self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2))
-                if self.evaluate(self.polinomial_dict, (min_interval + max_interval) / 2) == 0:
-                    return  (min_interval + max_interval) / 2
-            return (min_interval + max_interval) / 2
+    def to_dict(self):
+        return self.polynomial_dict
+
+    def start_plot(self,xmin=-10,xmax=10,step=1e-3):
+        self.gfxvar=gfx.PolyPlot(xmin,xmax,step)
+
+    def insert_graph(self,label,polynom_obj):
+        dict=polynom_obj.polynomial_dict
+        self.gfxvar.send_plot(label,dict)
+
+    def plot_remove(self,label):
+        self.gfxvar.plot_erase( label)
+
+    def execute_plot(self,legends=False,title="poly-Henrique"):
+        self.gfxvar.plot_exec(legends,title)
 
 
 
