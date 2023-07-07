@@ -265,98 +265,101 @@ the output will be like this:
 
 
 
-:warning:  **if derivative of polynom at the poin is zero, the method will fail, with an exception** 
+:warning: **If the derivative of the polynomial at the point is zero, the method will fail, resulting in an exception.**
+
+:warning: **If the number of iterations/cycles is low, this method may return an incorrect root value.** Make sure the cycle number is sufficient.
+
+<h3>Root  finding II</h3>
 
 
-:warning:  **if the number of iteraction/cycle is low this meth return a wrong root value** make sure that cycle number is sufficient 
+The second method is successive approximation (bisection), which involves dividing the interval into two parts in each iteration.
 
-<h3>root  finding II</h3>
+The command is:
 
-the second method is sucessive approximation(bisection)
-breaking the interval in two part in each iteraction
-
-the command is 
-
-```
+```python
 variable.successive_Approximation( min_interval, max_interval,tolerance)
 ```
 
-when
-
-```min_interval``` is the lower value in analisys
-
-```max_interval``` is the maximum value in analisys
-
-```tolerance``` the errorof the root(deffine thestop point of the method)
-an optional parameter, and default value is 0.001(1e-3)
 
 
-example
+```min_interval``` The lower value is the starting point of the analysis.
+
+```max_interval``` The maximum value in the analysis.
+
+```tolerance```  is the error of the root, which defines the stopping point of the method.
+It is an optional parameter, and the default value is 0.001 (1e-3)
+
+
+example:
 
 $$x^5-x^3+x+7=0;-2\leq  x\leq -1; \epsilon =10^{-5}$$
 
-can be done with
+Can be done using the following command:
 
-```
+```python
 poly_example.successive_Approximation(-2,-1,10**-5)
 ```
 
-aznd will  return
+the output will be like this:
 
 ```
 -1.289546012878418
 ```
 
-:warning:  **the root finding wil, fail, if the root is out of interval, or dont exist**
 
-:warning:  **the method may fail, if exist two roots or more, in interval**
+:warning: **The root finding will fail if the root is outside the interval or does not exist**
 
-<h3>graphics starting</h3>
+:warning: **The method may fail if there are two or more roots within the interval**
 
-to start the graphic the comand is 
+<h3>Starting the graphics</h3>
 
-```
+To start the graphic, the command is:
+
+```python
 variable.start_plot(xmin,xmax,step)
 ```
-where
-```xmin``` is minimum value in graphical analisys.
-an optional parameter the default value is -10
 
-```xmax``` is maximum value in graphical analisys.
-an optional parameter the default value is +10
 
-```step``` is ´the step between analisys value in  axys
-an optional parameter the default value is 0.001(1e-3)
+```xmin``` is the minimum value in graphical analysis.
+It is an optional parameter, and the default value is -10
 
-example
+```xmax```  is the maximum value in graphical analysis.
+It is an optional parameter, and the default value is +10
 
-```
+```step``` is the step between analysis values on the axis.
+It is an optional parameter, and the default value is 0.001 (1e-3).
+
+example:
+
+```python
 poly_example.start_plot(-5,5,1e-5)
 ```
 
-:warning:  **after be setted up, this values of minimum, maximum, step can´t be editted** is needed to create a new variable and new graphical
+:warning: **After being set up, the values of minimum, maximum, and step cannot be edited.**
+You would need to create a new variable and a new graphical analysis with the updated values
 
 <h3>adding function to graphics</h3>
 
-to add new function to graphics the command is 
+To add a new function to the graphics, the command is: 
 
-```
+```python
 variable.insert_graph(label,polynom)
 ```
 
-where
 
-````label``` is a flag/name to identify  the function(also used to setup the legend/subtitle)
 
-```polynom``` is the function polynom form expressed in class of polynom
+```label``` is a flag or name used to identify the function.
+It is also used to set up the legend or subtitle for the function
 
-example
+```polynom```  represents the polynomial function expressed in polynomial class form
+
+example:
 
 insert 3 function to graphics
 
-can be done with
+can be done using the following command:
 
-```
+```python
 poly_example.insert_graph("f",poly_example)
 poly_example.insert_graph("f'",poly_example2)
 poly_example.insert_graph("int f'",poly_example3)
@@ -364,13 +367,14 @@ poly_example.insert_graph("int f'",poly_example3)
 
 <h3>removing gunction before plot</h3>
 
-to remove a function the command is
 
-```
+To remove a function before plotting, the command is
+
+```python
 variable.plot_remove(label)
 ```
 
-where
+
 
 ```label``` is a flag/name to identify  the function
 
@@ -378,9 +382,11 @@ example
 
 remove the first function
 
-can be done with:
+can be done using the following command:
 
-```
+
+
+```python
 poly_example.plot_remove("f")
 
 ```
@@ -388,28 +394,28 @@ poly_example.plot_remove("f")
 
 <h3>Plotting in the screen the graphic</h3>
 
-to plot in the screen the graphic the command is 
 
-```
+To plot the graphic on the screen, the command is
+
+```python
 variable.execute_plot(legends,title)
 ```
 
-```legends``` an optional parameter, setted ````False``` by default.
-if ````True``` will show the legends/subtitle in the sreen
+```legends``` is an optional parameter, set to ```False``` by default.
+if set to ````True``` it will display the legends/subtitle on the screen.
 
-```title```  an optional parameter, setted "poly-Henrique" by default.
-this parameter is the name/title that appear in p of the graphic(title of graphic)
+```title```   is an optional parameter, set to "poly-Henrique" by default.
+This parameter represents the name or title that appears at the top of the graphic.
 
-example
+example:
 
-plot in the screen the graphic showing the legends and  with title "Example-graphic"
+To plot the graphic on the screen showing the legends and with the title "Example-graphic",
+you can use the following command:
 
-can be done with:
-
-```
+```python
 poly_example.execute_plot(True,"Example-graphic")
 ```
 
-and finally wilurn/show 
+And finally, the plot will be returned and shown on the screen.
 
 ![Captura de Tela (48)](https://github.com/henriqueassis2003/HenriquePolinomios/assets/128740531/4220c763-9216-4fe2-8977-6b72d363b313)
