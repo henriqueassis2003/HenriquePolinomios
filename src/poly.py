@@ -55,11 +55,3 @@ class polynomHenrique:
 
     def execute_plot(self,legends=False,title="poly-Henrique"):
         self.gfxvar.plot_exec(legends,title)
-
-
-
-
-polinomio = polinomioHenrique([(-1,1),(1,)])
-print(polinomio.newtonRaphson(-10,10))
-print(polinomio.sucessiveAproximation(-10,10))
-print("d")
