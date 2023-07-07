@@ -338,7 +338,7 @@ poly_example.start_plot(-5,5,1e-5)
 :warning: **After being set up, the values of minimum, maximum, and step cannot be edited.**
 You would need to create a new variable and a new graphical analysis with the updated values.
 
-<h3>adding function to graphics</h3>
+<h3>Adding function to graphics</h3>
 
 To add a new function to the graphics, the command is: 
 
