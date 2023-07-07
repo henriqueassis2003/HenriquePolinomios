@@ -70,7 +70,7 @@ Example:
 ```python
 print(poly_example.to_dict())
 ```
-the output will be like this:
+The output will be like this:
 
 
 ```
@@ -84,13 +84,13 @@ To erase a part of the polynomial, you can use the following command:
 variable.erase_degree(degree)
 ```
 
- ```degree```  "It is the key/degree that will be deleted.
+ ```degree```  It is the key/degree that will be deleted.
  
 Example, in:
 
 $$3x^7+11x^2+20x+2$$
 
-will be deleted:
+Will be deleted:
 $$3x^7$$
 Using the following command:
 ```python
@@ -154,9 +154,9 @@ Or
 variable.sym_Integral(True)
 ```
 
-```inplace``` is an optional parameter(```False``` by default).
-If set to ```True```  it will directly modify the primitive polynomial by overwriting it.
-If set to ```False```  it will return a new instance of the polynomial-class.
+```inplace``` Is an optional parameter(```False``` by default).
+If set to ```True```  It will directly modify the primitive polynomial by overwriting it.
+If set to ```False```  It will return a new instance of the polynomial-class.
 
 Example:
 
@@ -185,9 +185,9 @@ Or
 variable.sym_Derivative(True)
 ```
 
-```inplace``` is an optional parameter (```False``` by default).
-If set to   ```True```  it will directly modify the primitive polynomial by overwriting it.
-If set to ```False``` it will return a new instance of the polynomial-class.
+```inplace``` Is an optional parameter (```False``` by default).
+If set to   ```True```  It will directly modify the primitive polynomial by overwriting it.
+If set to ```False``` It will return a new instance of the polynomial-class.
 
 Example:
 
@@ -216,7 +216,7 @@ variable.evaluate(x)
 
 
 
-```x``` is the point on the horizontal axis.
+```x``` Is the point on the horizontal axis.
 
 Example:
 
@@ -286,7 +286,7 @@ variable.successive_Approximation( min_interval, max_interval,tolerance)
 
 ```max_interval``` The maximum value in the analysis.
 
-```tolerance```  is the error of the root, which defines the stopping point of the method.
+```tolerance```  Is the error of the root, which defines the stopping point of the method.
 It is an optional parameter, and the default value is 0.001 (1e-3)
 
 
@@ -320,13 +320,13 @@ variable.start_plot(xmin,xmax,step)
 ```
 
 
-```xmin``` is the minimum value in graphical analysis.
+```xmin``` Is the minimum value in graphical analysis.
 It is an optional parameter, and the default value is -10
 
-```xmax```  is the maximum value in graphical analysis.
+```xmax```  Is the maximum value in graphical analysis.
 It is an optional parameter, and the default value is +10
 
-```step``` is the step between analysis values on the axis.
+```step``` Is the step between analysis values on the axis.
 It is an optional parameter, and the default value is 0.001 (1e-3).
 
 example:
@@ -348,7 +348,7 @@ variable.insert_graph(label, polynomial)
 
 
 
-```label``` is a flag or name used to identify the function.
+```label``` Is a flag or name used to identify the function.
 It is also used to set up the legend or subtitle for the function.
 
 ``` polynomial```  represents the polynomial function expressed in polynomial class form.
@@ -401,10 +401,10 @@ To plot the graphic on the screen, the command is:
 variable.execute_plot(legends,title)
 ```
 
-```legends``` is an optional parameter, set to ```False``` by default.
+```legends``` Is an optional parameter, set to ```False``` by default.
 If set to ````True``` it will display the legends/subtitle on the screen.
 
-```title```   is an optional parameter, set to "poly-Henrique" by default.
+```title```   Is an optional parameter, set to "poly-Henrique" by default.
 This parameter represents the name or title that appears at the top of the graphic.
 
 Example:
