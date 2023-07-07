@@ -171,59 +171,60 @@ print(poly_example2.to_dict())
 
 <h3>Obtain the symbolic derivative</h3>
 
-to obtain the the simbolic derivative
 
-can be used creating a new variable like that
+To obtain the symbolic derivative of the polynomial,
+you can create a new variable and assign the derivative expression to it, following command:
 
-```
+```python
 variable2=variable.sym_Derivative(inplace)
 ```
 
 or 
 
-```
+```python
 variable.sym_Derivative(True)
 ```
 
-```inplace``` is a optional parameter, (```False``` by default)
-if ```True``` will modify directly the primitive polynom(overwrite)
-if ```False``` will return a class-polynom 
+```inplace``` is an optional parameter (```False``` by default)
+if set to   ```True```  it will directly modify the primitive polynomial by overwriting it.
+if set to ```False``` it will return a new instance of the polynomial-class
 
-example
+example:
 
 $$\frac{d}{dx}(x^5+\frac{5x^3}{3}+\frac{15x^2}{2}+14x)$$
 
 
-can be done with:
-```
+Can be done with following command:
+
+```python
 poly_example3=poly_example2.sym_Derivative()
 print(poly_example3.to_dict())
 ```
 
-the output is like that:
+the output will be like this:
 ```
 {2: 8.0, 1: 15.0, 0: 14.0, 4: 5.0}
 ```
 
 <h3>Evaluate a function </h3>
 
-to evaluate the function at point, is used 
+To evaluate a function at a point, is used 
 
-```
+```python
 variable.evaluate(x)
 ```
 
-where
 
-```x``` is the point of horizontal axys
+
+```x``` is the point on the horizontal axis
 
 Example:
 
-```
+```python
 print(poly_example.evaluate(2))
 ```
 
-and this return
+the output will be like this:
 
 ```
 156
