@@ -351,7 +351,7 @@ variable.insert_graph(label, polynomial)
 ```label``` Is a flag or name used to identify the function.
 It is also used to set up the legend or subtitle for the function.
 
-``` polynomial```  represents the polynomial function expressed in polynomial class form.
+``` polynomial```  Represents the polynomial function expressed in polynomial class form.
 
 Example:
 
@@ -365,7 +365,7 @@ poly_example.insert_graph("f'",poly_example2)
 poly_example.insert_graph("int f'",poly_example3)
 ```
 
-<h3>Removing gunction before plot</h3>
+<h3>Removing function before plot</h3>
 
 
 To remove a function before plotting, the command is:
@@ -376,7 +376,7 @@ variable.plot_remove(label)
 
 
 
-```label``` is a flag/name to identify  the function.
+```label``` Is a flag/name to identify  the function.
 
 Example:
 
