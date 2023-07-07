@@ -8,7 +8,7 @@ The goal of this library is to provide easy and efficient polynomial management.
 
 Issues may arise when:
 
-- Trying to manage high-degree polynomials, such as 120 or higher (especially in methods)
+- Trying to manage high-degree polynomials, such as 120 or higher (especially in numeric methods)
 
 
 <h1>Requirements</h1>
@@ -26,47 +26,47 @@ pip install matplotlib
 
 <h1> Syntax and user command</h1>
 
-<h3>Importing polynom library</h3>
+<h3>Importing  polynomial library</h3>
 
-after install the polynom library
+After install the  polynomial library
 
-To import the polynom library after installing it, you can use various methods. One way to do it is:
+To import the  polynomial library after installing it, you can use various methods. One way to do it is:
 
 ```python
 import poly
 ```
-Make sure you have successfully installed the polynom library before attempting to import it
+Make sure you have successfully installed the  polynomial library before attempting to import it
 
 
 
-To start using the library, 
-the first step is to define a variable and instantiate the Polynom class using a function-like syntax.
+To start using the library. 
+The first step is to define a variable and instantiate the  polynomial class using a function-like syntax.
 This can be done with the following code:
 
 ```python
 poly.polynomHenrique(dictionary)
 ```
 
-When dictionary is a dictionary that represents a polynomial,
-where the keys represent the degrees and the values represent the corresponding multipliers for each degree
+```dictionary``` Is a dictionary that represents a polynomial,
+Where the keys represent the degrees and the values represent the corresponding multipliers for each degree
 
-example, $$3x^7+11x^2+20x+2$$
+Example: $$3x^7+11x^2+20x+2$$
 
-can be represented as:
+Can be represented as:
 
 ```python
 poly_example=poly.polynomHenrique({7:3,2:11,1:20,0:2})
 ```
 
-<h3>returning to a dictionary </h3>
+<h3>Returning to a dictionary </h3>
 
 To convert a polynomial class to a dictionary, you can use the following command:
 
-```
+```python
 variable.to_dict()
 ```
 
-example:
+Example:
 ```python
 print(poly_example.to_dict())
 ```
@@ -77,7 +77,7 @@ the output will be like this:
 {7: 3, 2: 11, 1: 20, 0: 2}
 ```
 
-<h3>deleting terms from the polynomial.</h3>
+<h3>Deleting terms from the polynomial.</h3>
 To erase a part of the polynomial, you can use the following command:
 
 ```python
@@ -86,19 +86,19 @@ variable.erase_degree(degree)
 
  ```degree```  "It is the key/degree that will be deleted.
  
-example, in:
+Example, in:
 
 $$3x^7+11x^2+20x+2$$
 
 will be deleted:
 $$3x^7$$
-using the following command:
+Using the following command:
 ```python
 poly_example.erase_degree(7)
 print(poly_example.to_dict())
 ```
 
-the output will be like this:
+The output will be like this:
 
 ```
 {2: 11, 1: 20, 0: 2}
@@ -107,7 +107,7 @@ the output will be like this:
  :warning: **This command will modify the polynomial directly** (in-place) and won't return any information. Please be careful.
 
 
-<h3>sum terms from the polynomial</h3>
+<h3>Sum terms from the polynomial</h3>
 
 
 To sum a new part to the polynomial, you can use the following command:
@@ -116,14 +116,14 @@ To sum a new part to the polynomial, you can use the following command:
 variable.sum_polynom(dictionary)
 ```
 
-example:
+Example:
 
-add:
+Add:
 $$-3x^2+15+5x^4$$
-in: 
+In: 
 $$11x^2+20x+2$$
 
-using the following command:
+Using the following command:
 
 ```python
 poly_example.sum_polynom({2:-3,1:-5,0:12,4:5})
@@ -141,28 +141,28 @@ the output should be:
 <h3>Obtain the symbolic integral</h3>
 
 To obtain the symbolic integral of the polynomial,
-you can create a new variable and assign the integral expression to it, following command:
+You can create a new variable and assign the integral expression to it, following command:
 
 
 ```python
 variable2=variable.sym_Integral(inplace)
 ```
 
-or 
+Or 
 
 ```python
 variable.sym_Integral(True)
 ```
 
 ```inplace``` is an optional parameter(```False``` by default)
-if set to ```True```  it will directly modify the primitive polynomial by overwriting it.
-if set to ```False```  it will return a new instance of the polynomial-class
+If set to ```True```  it will directly modify the primitive polynomial by overwriting it.
+If set to ```False```  it will return a new instance of the polynomial-class
 
-example:
+Example:
 
 $$\int 5x^4+8x^2+15x+14 dx$$
 
-using: 
+Using: 
 
 ```python
 poly_example2=poly_example.sym_Integral()
@@ -173,23 +173,23 @@ print(poly_example2.to_dict())
 
 
 To obtain the symbolic derivative of the polynomial,
-you can create a new variable and assign the derivative expression to it, following command:
+You can create a new variable and assign the derivative expression to it, following command:
 
 ```python
 variable2=variable.sym_Derivative(inplace)
 ```
 
-or 
+Or 
 
 ```python
 variable.sym_Derivative(True)
 ```
 
 ```inplace``` is an optional parameter (```False``` by default)
-if set to   ```True```  it will directly modify the primitive polynomial by overwriting it.
-if set to ```False``` it will return a new instance of the polynomial-class
+If set to   ```True```  it will directly modify the primitive polynomial by overwriting it.
+If set to ```False``` it will return a new instance of the polynomial-class
 
-example:
+Example:
 
 $$\frac{d}{dx}(x^5+\frac{5x^3}{3}+\frac{15x^2}{2}+14x)$$
 
@@ -201,7 +201,7 @@ poly_example3=poly_example2.sym_Derivative()
 print(poly_example3.to_dict())
 ```
 
-the output will be like this:
+The output will be like this:
 ```
 {2: 8.0, 1: 15.0, 0: 14.0, 4: 5.0}
 ```
@@ -224,17 +224,17 @@ Example:
 print(poly_example.evaluate(2))
 ```
 
-the output will be like this:
+The output will be like this:
 
 ```
 156
 ```
 
-<h3>root  finding I</h3>
+<h3>Root  finding I</h3>
 
 The first method of root finding is the Newton-Raphson method.
 
-the command is:
+The command is:
 
 ```python
 variable.newton_Raphson(root,cycles)
@@ -243,21 +243,21 @@ variable.newton_Raphson(root,cycles)
 ```root``` An initial guess for the roo
 
 ```cycles```  The number of iterations for the Newton-Raphson method
-is an optional parameter, with a default value of 100 iterations.
+Is an optional parameter, with a default value of 100 iterations.
 
-example:
+Example:
 
 $$x^5-x^3+x+7=0;x_0=-1$$
 
 
-can be done using the following command:
+Can be done using the following command:
 
 ```python
 poly_example=poly.polynomHenrique({5:1,3:1,1:1,0:7})
 print(poly_example.newton_Raphson(-1))
 ```
 
-the output will be like this:
+The output will be like this:
 
 ```
 -1.289546366784894
@@ -290,7 +290,7 @@ variable.successive_Approximation( min_interval, max_interval,tolerance)
 It is an optional parameter, and the default value is 0.001 (1e-3)
 
 
-example:
+Example:
 
 $$x^5-x^3+x+7=0;-2\leq  x\leq -1; \epsilon =10^{-5}$$
 
@@ -300,7 +300,7 @@ Can be done using the following command:
 poly_example.successive_Approximation(-2,-1,10**-5)
 ```
 
-the output will be like this:
+The output will be like this:
 
 ```
 -1.289546012878418
@@ -343,7 +343,7 @@ You would need to create a new variable and a new graphical analysis with the up
 To add a new function to the graphics, the command is: 
 
 ```python
-variable.insert_graph(label,polynom)
+variable.insert_graph(label, polynomial)
 ```
 
 
@@ -351,13 +351,13 @@ variable.insert_graph(label,polynom)
 ```label``` is a flag or name used to identify the function.
 It is also used to set up the legend or subtitle for the function
 
-```polynom```  represents the polynomial function expressed in polynomial class form
+``` polynomial```  represents the polynomial function expressed in polynomial class form
 
-example:
+Example:
 
-insert 3 function to graphics
+Insert 3 function to graphics
 
-can be done using the following command:
+Can be done using the following command:
 
 ```python
 poly_example.insert_graph("f",poly_example)
@@ -365,7 +365,7 @@ poly_example.insert_graph("f'",poly_example2)
 poly_example.insert_graph("int f'",poly_example3)
 ```
 
-<h3>removing gunction before plot</h3>
+<h3>Removing gunction before plot</h3>
 
 
 To remove a function before plotting, the command is
@@ -378,11 +378,11 @@ variable.plot_remove(label)
 
 ```label``` is a flag/name to identify  the function
 
-example
+Example:
 
-remove the first function
+Remove the first function.
 
-can be done using the following command:
+Can be done using the following command:
 
 
 
@@ -402,15 +402,15 @@ variable.execute_plot(legends,title)
 ```
 
 ```legends``` is an optional parameter, set to ```False``` by default.
-if set to ````True``` it will display the legends/subtitle on the screen.
+If set to ````True``` it will display the legends/subtitle on the screen.
 
 ```title```   is an optional parameter, set to "poly-Henrique" by default.
 This parameter represents the name or title that appears at the top of the graphic.
 
-example:
+Example:
 
 To plot the graphic on the screen showing the legends and with the title "Example-graphic",
-you can use the following command:
+You can use the following command:
 
 ```python
 poly_example.execute_plot(True,"Example-graphic")
