@@ -39,7 +39,7 @@ Make sure you have successfully installed the  polynomial library before attempt
 
 
 
-To start using the library. 
+<h3>Sstart using the library. </h3>
 The first step is to define a variable and instantiate the  polynomial class using a function-like syntax.
 This can be done with the following code:
 
