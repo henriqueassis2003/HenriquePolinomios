@@ -8,7 +8,7 @@ The goal of this library is to provide easy and efficient polynomial management.
 
 Issues may arise when:
 
-- Trying to manage high-degree polynomials, such as 120 or higher (especially in numeric methods)
+- Trying to manage high-degree polynomials, such as 120 or higher (especially in numeric methods).
 
 
 <h1>Requirements</h1>
@@ -28,14 +28,14 @@ pip install matplotlib
 
 <h3>Importing  polynomial library</h3>
 
-After install the  polynomial library
+After install the  polynomial library.
 
 To import the  polynomial library after installing it, you can use various methods. One way to do it is:
 
 ```python
 import poly
 ```
-Make sure you have successfully installed the  polynomial library before attempting to import it
+Make sure you have successfully installed the  polynomial library before attempting to import it.
 
 
 
@@ -47,8 +47,8 @@ This can be done with the following code:
 poly.polynomHenrique(dictionary)
 ```
 
-```dictionary``` Is a dictionary that represents a polynomial,
-Where the keys represent the degrees and the values represent the corresponding multipliers for each degree
+```dictionary``` Is a dictionary that represents a polynomial.
+Where the keys represent the degrees and the values represent the corresponding multipliers for each degree.
 
 Example: $$3x^7+11x^2+20x+2$$
 
@@ -154,9 +154,9 @@ Or
 variable.sym_Integral(True)
 ```
 
-```inplace``` is an optional parameter(```False``` by default)
+```inplace``` is an optional parameter(```False``` by default).
 If set to ```True```  it will directly modify the primitive polynomial by overwriting it.
-If set to ```False```  it will return a new instance of the polynomial-class
+If set to ```False```  it will return a new instance of the polynomial-class.
 
 Example:
 
@@ -185,9 +185,9 @@ Or
 variable.sym_Derivative(True)
 ```
 
-```inplace``` is an optional parameter (```False``` by default)
+```inplace``` is an optional parameter (```False``` by default).
 If set to   ```True```  it will directly modify the primitive polynomial by overwriting it.
-If set to ```False``` it will return a new instance of the polynomial-class
+If set to ```False``` it will return a new instance of the polynomial-class.
 
 Example:
 
@@ -208,7 +208,7 @@ The output will be like this:
 
 <h3>Evaluate a function </h3>
 
-To evaluate a function at a point, is used 
+To evaluate a function at a point, is used:
 
 ```python
 variable.evaluate(x)
@@ -216,7 +216,7 @@ variable.evaluate(x)
 
 
 
-```x``` is the point on the horizontal axis
+```x``` is the point on the horizontal axis.
 
 Example:
 
@@ -240,9 +240,9 @@ The command is:
 variable.newton_Raphson(root,cycles)
 ```
 
-```root``` An initial guess for the roo
+```root``` An initial guess for the root.
 
-```cycles```  The number of iterations for the Newton-Raphson method
+```cycles```  The number of iterations for the Newton-Raphson method.
 Is an optional parameter, with a default value of 100 iterations.
 
 Example:
@@ -307,9 +307,9 @@ The output will be like this:
 ```
 
 
-:warning: **The root finding will fail if the root is outside the interval or does not exist**
+:warning: **The root finding will fail if the root is outside the interval or does not exist.**
 
-:warning: **The method may fail if there are two or more roots within the interval**
+:warning: **The method may fail if there are two or more roots within the interval.**
 
 <h3>Starting the graphics</h3>
 
@@ -336,7 +336,7 @@ poly_example.start_plot(-5,5,1e-5)
 ```
 
 :warning: **After being set up, the values of minimum, maximum, and step cannot be edited.**
-You would need to create a new variable and a new graphical analysis with the updated values
+You would need to create a new variable and a new graphical analysis with the updated values.
 
 <h3>adding function to graphics</h3>
 
@@ -349,13 +349,13 @@ variable.insert_graph(label, polynomial)
 
 
 ```label``` is a flag or name used to identify the function.
-It is also used to set up the legend or subtitle for the function
+It is also used to set up the legend or subtitle for the function.
 
-``` polynomial```  represents the polynomial function expressed in polynomial class form
+``` polynomial```  represents the polynomial function expressed in polynomial class form.
 
 Example:
 
-Insert 3 function to graphics
+Insert 3 function to graphics.
 
 Can be done using the following command:
 
@@ -368,7 +368,7 @@ poly_example.insert_graph("int f'",poly_example3)
 <h3>Removing gunction before plot</h3>
 
 
-To remove a function before plotting, the command is
+To remove a function before plotting, the command is:
 
 ```python
 variable.plot_remove(label)
@@ -376,7 +376,7 @@ variable.plot_remove(label)
 
 
 
-```label``` is a flag/name to identify  the function
+```label``` is a flag/name to identify  the function.
 
 Example:
 
@@ -395,7 +395,7 @@ poly_example.plot_remove("f")
 <h3>Plotting in the screen the graphic</h3>
 
 
-To plot the graphic on the screen, the command is
+To plot the graphic on the screen, the command is:
 
 ```python
 variable.execute_plot(legends,title)
@@ -409,7 +409,7 @@ This parameter represents the name or title that appears at the top of the graph
 
 Example:
 
-To plot the graphic on the screen showing the legends and with the title "Example-graphic",
+To plot the graphic on the screen showing the legends and with the title "Example-graphic".
 You can use the following command:
 
 ```python
