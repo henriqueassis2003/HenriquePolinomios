@@ -330,4 +330,80 @@ poly_example.start_plot(-5,5,1e-5)
 
 :warning:  **after be setted up, this values of minimum, maximum, step can´t be editted** is needed to create a new variable and new graphical
 
-<h3>adding new graphics</h3>
+<h3>adding function to graphics</h3>
+
+to add new function to graphics the command is 
+
+```
+variable.insert_graph(label,polynom)
+```
+
+where
+
+````label``` is a flag/name to identify  the function(also used to setup the legend/subtitle)
+
+```polynom``` is the function polynom form expressed in class of polynom
+
+example
+
+insert 3 function to graphics
+
+can be done with
+
+```
+poly_example.insert_graph("f",poly_example)
+poly_example.insert_graph("f'",poly_example2)
+poly_example.insert_graph("int f'",poly_example3)
+```
+
+<h3>removing gunction before plot</h3>
+
+to remove a function the command is
+
+```
+variable.plot_remove(label)
+```
+
+where
+
+```label``` is a flag/name to identify  the function
+
+example
+
+remove the first function
+
+can be done with:
+
+```
+poly_example.plot_remove("f")
+
+```
+
+
+<h3>Plotting in the screen the graphic</h3>
+
+to plot in the screen the graphic the command is 
+
+```
+variable.execute_plot(legends,title)
+```
+
+```legends``` an optional parameter, setted ````False``` by default.
+if ````True``` will show the legends/subtitle in the sreen
+
+```title```  an optional parameter, setted "poly-Henrique" by default.
+this parameter is the name/title that appear in p of the graphic(title of graphic)
+
+example
+
+plot in the screen the graphic showing the legends and  with title "Example-graphic"
+
+can be done with:
+
+```
+poly_example.execute_plot(True,"Example-graphic")
+```
+
+and finally wilurn/show 
+
+![Captura de Tela (48)](https://github.com/henriqueassis2003/HenriquePolinomios/assets/128740531/4220c763-9216-4fe2-8977-6b72d363b313)
