@@ -194,7 +194,7 @@ example:
 $$\frac{d}{dx}(x^5+\frac{5x^3}{3}+\frac{15x^2}{2}+14x)$$
 
 
-Can be done with following command:
+Can be done using the following command:
 
 ```python
 poly_example3=poly_example2.sym_Derivative()
@@ -232,31 +232,32 @@ the output will be like this:
 
 <h3>root  finding I</h3>
 
-the frst method of root finding is newton-Raphson method
+The first method of root finding is the Newton-Raphson method.
 
-the command is
+the command is:
 
-```
+```python
 variable.newton_Raphson(root,cycles)
 ```
 
-```root``` is a initial guess value for root of the polynom
+```root``` An initial guess for the roo
 
-```cycles```  is the number of iterations of newton method
-Is an optional parameter, and default value is 100 iterations
+```cycles```  The number of iterations for the Newton-Raphson method
+is an optional parameter, with a default value of 100 iterations.
 
-example
+example:
 
 $$x^5-x^3+x+7=0;x_0=-1$$
 
 
-cn be done with
+can be done using the following command:
 
-```
+```python
 poly_example=poly.polynomHenrique({5:1,3:1,1:1,0:7})
 print(poly_example.newton_Raphson(-1))
 ```
-and return 
+
+the output will be like this:
 
 ```
 -1.289546366784894
