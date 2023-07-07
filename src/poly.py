@@ -23,7 +23,7 @@ class polynomHenrique:
 
     def sym_Derivative(self,inplace=False):
         derivate_dict_out = {(i - 1) : (self.polynomial_dict[i] * i) for i in self.polynomial_dict}
-        if -1 in derivate_dict_out:
+        if -1 in derivate_dict_out: #clean 0x^-1(reduce errors)
             del derivate_dict_out[-1]
         if inplace:
             self.polynomial_dict= derivate_dict_out
