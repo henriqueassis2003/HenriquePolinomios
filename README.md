@@ -2,24 +2,23 @@
 
 <h1>Objectives</h1>
 
-The goals of ts libbrary is provide easy and good polynom management
+The goal of this library is to provide easy and efficient polynomial management.
 
 <h1>Limitations</h1>
 
-Issues can appear when:
+Issues may arise when:
 
-- Try to manage high degree polynom like 120 or higher (Especially in methods)
+- Trying to manage high-degree polynomials, such as 120 or higher (especially in methods)
 
 
-<h1>Requeriments</h1>
+<h1>Requirements</h1>
 
-to execute the library is needed:
+To execute the library, the following is needed:
 
-- A python compiler or Venv runninthon version 3.1.4 (or Newer)
+- A Python compiler or Venv running Python version 3.1.4 (or newer).
 
-- Install the matplotb library
-
-  can be done in python terminal with:
+- Installation of the matplotlib library.
+This can be done in the Python terminal with the following command:
 
 ```console
 pip install matplotlib
@@ -31,36 +30,37 @@ pip install matplotlib
 
 after install the polynom library
 
-the next step is import the polynom library, can be done by several ways
-one way is:
+To import the polynom library after installing it, you can use various methods. One way to do it is:
 
 ```python
 import poly
 ```
+Make sure you have successfully installed the polynom library before attempting to import it
 
 
-to start thuse of the library the step is, 
-deffine a variable and call the polynom class with a function like syntax,
-can be done with:
 
-```
+To start using the library, 
+the first step is to define a variable and instantiate the Polynom class using a function-like syntax.
+This can be done with the following code:
+
+```python
 poly.polynomHenrique(dictionary)
 ```
 
-when ```dictionary``` is a dictionary that represent the polynom. 
-The key represent the degree and the value represent the multiplier for each key/degree
+When dictionary is a dictionary that represents a polynomial,
+where the keys represent the degrees and the values represent the corresponding multipliers for each degree
 
 example, $$3x^7+11x^2+20x+2$$
 
-can be represented in
+can be represented as:
 
 ```python
 poly_example=poly.polynomHenrique({7:3,2:11,1:20,0:2})
 ```
 
-<h3>returning for dictionary </h3>
+<h3>returning to a dictionary </h3>
 
-for return thepolynom-class to dictionary, the command is
+To convert a polynomial class to a dictionary, you can use the following command:
 
 ```
 variable.to_dict()
@@ -70,104 +70,108 @@ example:
 ```python
 print(poly_example.to_dict())
 ```
-the output like this:
+the output will be like this:
 
 
 ```
 {7: 3, 2: 11, 1: 20, 0: 2}
 ```
 
-<h3>Erasing parts of the polynom</h3>
-to erase a part of the polynom, the command is:
+<h3>deleting terms from the polynomial.</h3>
+To erase a part of the polynomial, you can use the following command:
 
-```
+```python
 variable.erase_degree(degree)
 ```
 
-when ```degree```  is the degree/key that will be deleted
+ ```degree```  "It is the key/degree that will be deleted.
+ 
+example, in:
 
-example, in
 $$3x^7+11x^2+20x+2$$
-will be deleted the
+
+will be deleted:
 $$3x^7$$
-using the 
+using the following command:
 ```python
 poly_example.erase_degree(7)
 print(poly_example.to_dict())
 ```
 
-the output will be:
+the output will be like this:
 
 ```
 {2: 11, 1: 20, 0: 2}
 ```
 
- :warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
+ :warning: **This command will modify the polynomial directly** (in-place) and won't return any information. Please be careful.
 
 
-<h3>sum the parts for the polynom</h3>
+<h3>sum terms from the polynomial</h3>
 
-to sum a new part
-the command is:
 
-```
+To sum a new part to the polynomial, you can use the following command:
+
+```python
 variable.sum_polynom(dictionary)
 ```
 
 example:
 
-add 
+add:
 $$-3x^2+15+5x^4$$
-in the 
+in: 
 $$11x^2+20x+2$$
 
-using the command
+using the following command:
 
-```
+```python
 poly_example.sum_polynom({2:-3,1:-5,0:12,4:5})
 print(poly_example.to_dict())
 ```
 
-the output must be:
+the output should be:
 
 ```
 {2: 8, 1: 15, 0: 14, 4: 5}
 ```
 
-:warning:  **This command will modify directly the polynom**(inplace), and don't return any information, be careful
+ :warning: **This command will modify the polynomial directly** (in-place) and won't return any information. Please be careful.
 
-<h3>Getting symbolic integral</h3>
+<h3>Obtain the symbolic integral</h3>
 
-to get the new integral can be used creating a new variable like that
+To obtain the symbolic integral of the polynomial,
+you can create a new variable and assign the integral expression to it, following command:
 
-```
+
+```python
 variable2=variable.sym_Integral(inplace)
 ```
 
 or 
 
-```
+```python
 variable.sym_Integral(True)
 ```
 
-```inplace``` is a optional parameter, (```False``` by default)
-if ```True``` will modify directly the primitive polynom(overwrite)
-if ```False``` will return a class-polynom 
+```inplace``` is an optional parameter(```False``` by default)
+if set to ```True```  it will directly modify the primitive polynomial by overwriting it.
+if set to ```False```  it will return a new instance of the polynomial-class
 
 example:
 
 $$\int 5x^4+8x^2+15x+14 dx$$
 
-using 
+using: 
 
-```
+```python
 poly_example2=poly_example.sym_Integral()
 print(poly_example2.to_dict())
 ```
 
-<h3>Getting symbolic derivative</h3>
+<h3>Obtain the symbolic derivative</h3>
 
-to get the simbolic derivative
+to obtain the the simbolic derivative
 
 can be used creating a new variable like that
 
