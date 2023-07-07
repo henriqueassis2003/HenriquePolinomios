@@ -169,6 +169,11 @@ poly_example2=poly_example.sym_Integral()
 print(poly_example2.to_dict())
 ```
 
+The output will be like this:
+```
+{3: 2.6666666666666665, 2: 7.5, 1: 14.0, 5: 1.0}
+```
+
 <h3>Obtain the symbolic derivative</h3>
 
 
